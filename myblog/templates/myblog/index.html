@@ -6,7 +6,12 @@
     <body>
         <ul>
             {% for i in items %}
-                <li>{{i.title}} {{i.rarelity}}</li>
+                <li>
+                    <div>
+                        {{i.title}} {{i.rarelity}} {{i.id}}
+                        <a href = '{% url "detail" i.id %}'>詳細</a>
+                    </div>
+                </li>
             {% endfor %}
         </ul>
     </body>

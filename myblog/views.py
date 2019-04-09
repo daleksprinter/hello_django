@@ -11,3 +11,11 @@ class Index(TemplateView):
             'items' : Item.objects.all(),
         }
         return contest
+
+class Detail(TemplateView):
+    template_name = 'myblog/detail.html'
+    def  get_context_data(self, **kwargs):
+        context = {
+            'item' : Item.objects.get(pk = self.kwargs.get('pk')),
+        }
+        return context
