@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.template import loader
+from myblog.models import Item
 from django.shortcuts import render
 def index(request):
     context = {
-        'hoge' : 'fuga',
+        'items' : Item.objects.all(),
     }
     return render(request, 'myblog/index.html', context)

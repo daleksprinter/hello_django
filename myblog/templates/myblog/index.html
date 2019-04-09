@@ -4,6 +4,10 @@
         <title>myblog</title>
     </head>
     <body>
-        <h1>{{hoge}}</h1>
+        <ul>
+            {% for i in items %}
+                <li>{{i.title}} {{i.rarelity}}</li>
+            {% endfor %}
+        </ul>
     </body>
 </html>
