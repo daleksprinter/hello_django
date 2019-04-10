@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>sign up</h1>
+<setcion class = 'common-form'>
+    <form method = 'post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type = 'submit' >signup</button>
+    </form>
+</setcion>
+{% endblock %}

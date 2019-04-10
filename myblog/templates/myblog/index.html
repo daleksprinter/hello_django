@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>myblog</title>
-    </head>
-    <body>
+{% extends 'layout.html' %}
+{% block content %}
         <ul>
             {% for i in items %}
                 <li>
@@ -14,5 +10,4 @@
                 </li>
             {% endfor %}
         </ul>
-    </body>
-</html>
+{% endblock %}

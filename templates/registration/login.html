@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Login</h1>
+<div>
+    {% if form.errors %}
+        <p class = 'error-msg'>wrong data</p>
+    {% endif %}
+
+    {% if next %}
+        {% if user.is_authenticated %}
+            <p class = 'error-msg'>you can't access</p>
+        {% else %}
+            <p class ='error-msg'>please login</p>
+        {% endif %}
+    {% endif %}
+
+    <form action = '{% url "login" %}' method = 'post'>
+        {% csrf_token %}
+        <input type = 'hidden' name = 'next' value = '{{ next }}'/>
+        {{ form.as_p }}
+        <button type = 'submit'>Login</button>
+    </form>
+</div>
+{% endblock %}

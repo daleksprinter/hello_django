@@ -19,5 +19,8 @@ from django.shortcuts import redirect
 from django.views.generic.base import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('myblog', include('myblog.urls')),
+    path('myblog/', include('myblog.urls')),
+    path('', RedirectView.as_view(url = 'myblog/')),
+    path('accounts/', include('accounts.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
