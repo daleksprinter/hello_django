@@ -1,4 +1,7 @@
 {% extends 'layout.html' %}
 {% block content %}
 {{item.title}}
+{% if request.user.id == object.author.id %}
+    <p>you made this data</p>
+{% endif %}
 {% endblock %}

@@ -6,7 +6,7 @@
     <body>
         <div id = header>
             <p1>Hello Django</p1>
-            {% if user.authenticated %}
+            {% if user.is_authenticated %}
                 <p>{{user}}</p>
                 <a href = '{% url "logout" %}'>Logout</a>
             {% else %}

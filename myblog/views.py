@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from myblog.models import Item
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from django.views.generic.edit import CreateView
 
 class Index(TemplateView):
     template_name = 'myblog/index.html'
@@ -19,3 +20,7 @@ class Detail(TemplateView):
             'item' : Item.objects.get(pk = self.kwargs.get('pk')),
         }
         return context
+
+class Create(CreateView):
+    model = Item
+    fields = '__all__'
